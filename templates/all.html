@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Keytext (Copy & Paste)</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <style>
+        .card {
+          box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+          transition: 0.3s;
+                     }
+         .card:hover {
+           box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+              }
+</style>
+</head>
+
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">Keytext (Copy & Paste)</a>
+          </div>
+        </div>
+      </nav>
+
+    <div class="container-fluid justify-content-center" style="margin-top: 90px;">
+         <div class="signup-form">
+                    <form method="POST" action="{{ url_for('all')}}">
+                         {% for row in rows %}
+                        <div class="container-fluid">
+                        <div class="card">
+                           <h4>Date : {{row["date"]}}</h4>
+                           <h5>Author: <b>{{row["name"]}}</b></h5>
+                           <p>{{row["data"]}}</p>
+                        </div>
+                        </div>
+                          {% endfor %}
+                  </form>
+          </div>
+     </div>
+</body>
+</html>
